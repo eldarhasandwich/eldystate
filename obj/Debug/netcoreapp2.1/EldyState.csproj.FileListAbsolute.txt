@@ -1,0 +1,11 @@
+/Users/eldar/gamedev/EldyState/bin/Debug/netcoreapp2.1/EldyState.deps.json
+/Users/eldar/gamedev/EldyState/bin/Debug/netcoreapp2.1/EldyState.runtimeconfig.json
+/Users/eldar/gamedev/EldyState/bin/Debug/netcoreapp2.1/EldyState.runtimeconfig.dev.json
+/Users/eldar/gamedev/EldyState/bin/Debug/netcoreapp2.1/EldyState.dll
+/Users/eldar/gamedev/EldyState/bin/Debug/netcoreapp2.1/EldyState.pdb
+/Users/eldar/gamedev/EldyState/obj/Debug/netcoreapp2.1/EldyState.csprojAssemblyReference.cache
+/Users/eldar/gamedev/EldyState/obj/Debug/netcoreapp2.1/EldyState.csproj.CoreCompileInputs.cache
+/Users/eldar/gamedev/EldyState/obj/Debug/netcoreapp2.1/EldyState.AssemblyInfoInputs.cache
+/Users/eldar/gamedev/EldyState/obj/Debug/netcoreapp2.1/EldyState.AssemblyInfo.cs
+/Users/eldar/gamedev/EldyState/obj/Debug/netcoreapp2.1/EldyState.dll
+/Users/eldar/gamedev/EldyState/obj/Debug/netcoreapp2.1/EldyState.pdb

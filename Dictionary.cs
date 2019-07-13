@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 
 namespace EldyState {
+
   public class Dictionary<T> {
 
-    class KeyValuePair {
+    public class KeyValuePair {
       public string key;
       public T value;
 
-      KeyValuePair(string _k, T _v) {
+      public KeyValuePair(string _k, T _v) {
         key = _k;
         value = _v;
       }
@@ -30,7 +31,12 @@ namespace EldyState {
     }
 
     public T Get(string key) {
-      return retrieve(key);
+      KeyValuePair kvp = retrieve(key);
+      if (kvp == null) {
+        return default(T);
+      }
+
+      return kvp.value;
     }
   }
 }
