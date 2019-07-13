@@ -13,7 +13,7 @@ void Set(string key, T value);
 ```
 
 ```cs
-T Get<T>(string value);
+T Get(string value);
 ```
 
 ```cs
