@@ -4,7 +4,7 @@ namespace EldyState {
 
   public class Dictionary<T> {
 
-    public delegate void updateEvent();
+    public delegate void updateEvent(T value);
 
     public class KeyValue {
       public string key;
@@ -28,7 +28,7 @@ namespace EldyState {
       KeyValue kv = retrieve(key);
       if (kv != null) {
         kv.value = value;
-        kv.updateEventHandler();
+        kv.updateEventHandler(value);
         return;
       }
 

@@ -9,8 +9,8 @@ namespace EldyState {
 
       intDict.Set("my face", 60);
   
-      intDict.AddEventToKey("my face", () => {
-        Console.WriteLine("Updated thing");
+      intDict.AddEventToKey("my face", (x) => {
+        Console.WriteLine("Updated thing; " + x);
       });
 
       intDict.Set("my face", 100);
