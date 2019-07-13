@@ -4,39 +4,56 @@ namespace EldyState {
 
   public class Dictionary<T> {
 
-    public class KeyValuePair {
+    public delegate void updateEvent();
+
+    public class KeyValue {
       public string key;
       public T value;
 
-      public KeyValuePair(string _k, T _v) {
+      public updateEvent updateEventHandler;
+
+      public KeyValue(string _k, T _v) {
         key = _k;
         value = _v;
       }
     }
 
-    List<KeyValuePair> dict = new List<KeyValuePair>();
+    List<KeyValue> dict = new List<KeyValue>();
 
-    KeyValuePair retrieve(string key) {
+    KeyValue retrieve(string key) {
       return dict.Find(x => x.key == key);
     }
 
     public void Set(string key, T value) {
-      KeyValuePair kvp = retrieve(key);
-      if (kvp != null) {
-        kvp.value = value;
+      KeyValue kv = retrieve(key);
+      if (kv != null) {
+        kv.value = value;
+        kv.updateEventHandler();
         return;
       }
 
-      dict.Add(new KeyValuePair(key, value));
+      dict.Add(new KeyValue(key, value));
     }
 
     public T Get(string key) {
-      KeyValuePair kvp = retrieve(key);
-      if (kvp == null) {
+      KeyValue kv = retrieve(key);
+      if (kv == null) {
         return default(T);
       }
 
-      return kvp.value;
+      return kv.value;
+    }
+
+    public void AddEventToKey(string key, updateEvent fn) {
+      KeyValue kv = retrieve(key);
+      if (kv == null) {
+        KeyValue newKv = new KeyValue(key, default(T));
+        newKv.updateEventHandler += fn;
+        dict.Add(newKv);
+        return;
+      }
+
+      kv.updateEventHandler += fn;
     }
   }
 }

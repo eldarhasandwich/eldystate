@@ -8,11 +8,13 @@ namespace EldyState {
       Dictionary<int> bDict = new Dictionary<int>();
 
       bDict.Set("my face", 60);
-      bDict.Set("my other face", 60);
+  
+      bDict.AddEventToKey("my face", () => {
+        Console.WriteLine("Updated thing");
+      });
 
-      Console.WriteLine(bDict.Get("not my face"));
-      Console.WriteLine(bDict.Get("my other face"));
-      Console.WriteLine(bDict.Get("my face"));
+      bDict.Set("my face", 100);
+
     }
   }
 }
