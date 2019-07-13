@@ -5,15 +5,15 @@ namespace EldyState {
   class Program {
 
     static void Main(string[] args) {
-      Dictionary<int> bDict = new Dictionary<int>();
+      Dictionary<int> intDict = new Dictionary<int>();
 
-      bDict.Set("my face", 60);
+      intDict.Set("my face", 60);
   
-      bDict.AddEventToKey("my face", () => {
+      intDict.AddEventToKey("my face", () => {
         Console.WriteLine("Updated thing");
       });
 
-      bDict.Set("my face", 100);
+      intDict.Set("my face", 100);
 
     }
   }
